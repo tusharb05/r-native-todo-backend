@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const registerationRoute = require("./routes/resgister");
 const loginRoute = require("./routes/login");
+const loginByIdRoute = require("./routes/loginById");
 const addTodoRoute = require("./routes/addTodo");
 const removeTodoRoute = require("./routes/removeTodo");
 const getTodosRoute = require("./routes/getTodos");
@@ -24,6 +25,7 @@ app.use(express.json());
 
 app.use("/api/user/register", registerationRoute);
 app.use("/api/user/login", loginRoute);
+app.use("/api/user/loginbyid", loginByIdRoute);
 app.use("/api/todo/add", addTodoRoute);
 app.use("/api/todo/remove", removeTodoRoute);
 app.use("/api/todo/get", getTodosRoute);

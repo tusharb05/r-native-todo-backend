@@ -8,6 +8,7 @@ const removeTodoRoute = require("./routes/removeTodo");
 const getTodosRoute = require("./routes/getTodos");
 const starTodoRoute = require("./routes/starTodo");
 const unStarTodoRoute = require("./routes/unStarTodo");
+const completeTodoRoute = require("./routes/completeTodo");
 
 const PORT = process.env.PORT || 5000;
 const app = express();
@@ -26,6 +27,7 @@ app.use("/api/todo/add", addTodoRoute);
 app.use("/api/todo/remove", removeTodoRoute);
 app.use("/api/todo/get", getTodosRoute);
 app.use("/api/todo/star", starTodoRoute);
-app.use("/api/todo/unstar", unStarTodoRoute); //asdf
+app.use("/api/todo/unstar", unStarTodoRoute);
+app.use("/api/todo/complete", completeTodoRoute);
 
 app.listen(PORT, () => console.log("server up"));
